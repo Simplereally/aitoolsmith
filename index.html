@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Toolsmith | Free Developer Tools, Guides & Automation Resources</title>
+    <meta name="description" content="Discover the best free AI tools, developer utilities, and automation guides. QR generators, color palettes, password tools, and more — all free, all useful.">
+    <meta name="keywords" content="AI tools, developer tools, free utilities, automation, QR code generator, color palette, password generator">
+    <link rel="canonical" href="https://simplereally.github.io/aitoolsmith/">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI Toolsmith | Free Developer Tools & Automation Resources">
+    <meta property="og:description" content="Discover the best free AI tools, developer utilities, and automation guides.">
+    <meta property="og:url" content="https://simplereally.github.io/aitoolsmith/">
+    <meta property="og:site_name" content="AI Toolsmith">
+    <meta property="og:image" content="https://simplereally.github.io/aitoolsmith/og-image.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Toolsmith | Free Developer Tools & Automation Resources">
+    <meta name="twitter:description" content="Discover the best free AI tools, developer utilities, and automation guides.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AI Toolsmith",
+        "url": "https://simplereally.github.io/aitoolsmith/",
+        "description": "Free developer tools, guides, and automation resources",
+        "publisher": {
+            "@type": "Organization",
+            "name": "AI Toolsmith"
+        }
+    }
+    </script>
+    
+    <style>
+        :root {
+            --void: #0a0a0f;
+            --void-light: #12121a;
+            --charcoal: #1a1a24;
+            --charcoal-light: #252530;
+            --slate: #3a3a4a;
+            --muted: #6b6b7b;
+            --text: #e4e4e7;
+            --text-bright: #fafafa;
+            --ember: #f97316;
+            --ember-glow: #fb923c;
+            --ember-dark: #ea580c;
+            --success: #22c55e;
+            --info: #3b82f6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--void);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Chakra Petch', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        code, pre {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        a {
+            color: var(--ember);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        a:hover {
+            color: var(--ember-glow);
+        }
+        
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--charcoal-light);
+            padding: 1rem 0;
+        }
+        
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-bright);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .logo-icon {
+            color: var(--ember);
+        }
+        
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav a {
+            color: var(--text);
+            font-weight: 500;
+        }
+        
+        .nav a:hover {
+            color: var(--ember);
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(180deg, var(--void) 0%, var(--void-light) 100%);
+            border-bottom: 1px solid var(--charcoal);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--text-bright);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h1 span {
+            color: var(--ember);
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--muted);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--ember);
+            color: var(--void);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.2s;
+        }
+        
+        .hero-cta:hover {
+            background: var(--ember-glow);
+            color: var(--void);
+            transform: translateY(-2px);
+        }
+        
+        /* Main Content */
+        .main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 4rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .main {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Articles Grid */
+        .section-title {
+            font-size: 2rem;
+            color: var(--text-bright);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 100%;
+            min-height: 2rem;
+            background: var(--ember);
+            border-radius: 2px;
+        }
+        
+        .articles-grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .article-card {
+            background: var(--charcoal);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--charcoal-light);
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        
+        .article-card:hover {
+            border-color: var(--ember);
+            transform: translateY(-4px);
+        }
+        
+        .article-card h3 {
+            font-size: 1.5rem;
+            color: var(--text-bright);
+            margin-bottom: 1rem;
+        }
+        
+        .article-card h3 a {
+            color: inherit;
+        }
+        
+        .article-card h3 a:hover {
+            color: var(--ember);
+        }
+        
+        .article-card p {
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--slate);
+        }
+        
+        .article-tag {
+            display: inline-block;
+            background: var(--void);
+            color: var(--ember);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .sidebar-card {
+            background: var(--charcoal);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--charcoal-light);
+        }
+        
+        .sidebar-card h4 {
+            font-size: 1rem;
+            color: var(--text-bright);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .tool-list {
+            list-style: none;
+        }
+        
+        .tool-list li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .tool-list a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background: var(--void-light);
+            border-radius: 8px;
+            color: var(--text);
+            transition: background 0.2s, color 0.2s;
+        }
+        
+        .tool-list a:hover {
+            background: var(--ember);
+            color: var(--void);
+        }
+        
+        .tool-list .tool-icon {
+            font-size: 1.25rem;
+        }
+        
+        .tool-list .tool-name {
+            font-weight: 500;
+        }
+        
+        /* Bazaar Banner */
+        .bazaar-banner {
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--void-light) 100%);
+            border: 1px solid var(--ember);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .bazaar-banner h4 {
+            color: var(--ember);
+            margin-bottom: 0.5rem;
+        }
+        
+        .bazaar-banner p {
+            color: var(--muted);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        
+        .bazaar-banner a {
+            display: inline-block;
+            background: var(--ember);
+            color: var(--void);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        .bazaar-banner a:hover {
+            background: var(--ember-glow);
+            color: var(--void);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--void-light);
+            border-top: 1px solid var(--charcoal);
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h5 {
+            font-size: 0.875rem;
+            color: var(--text-bright);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: var(--muted);
+            font-size: 0.875rem;
+        }
+        
+        .footer-section a:hover {
+            color: var(--ember);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--charcoal);
+            color: var(--muted);
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="/" class="logo">
+                <span class="logo-icon">⚒️</span>
+                AI Toolsmith
+            </a>
+            <nav class="nav">
+                <a href="#articles">Articles</a>
+                <a href="#tools">Tools</a>
+                <a href="https://simplereally.github.io/bazaar/" target="_blank">Bazaar</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <h1>Free Tools for <span>Developers</span></h1>
+        <p>Discover the best free AI tools, developer utilities, and automation guides. No sign-ups, no subscriptions — just useful tools that work.</p>
+        <a href="#articles" class="hero-cta">
+            Browse Guides →
+        </a>
+    </section>
+    
+    <main class="main" id="articles">
+        <section class="articles">
+            <h2 class="section-title">Latest Articles</h2>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <span class="article-tag">Tools</span>
+                    <h3><a href="articles/best-free-qr-code-generators-2026.html">Best Free QR Code Generators in 2026 — Complete Guide</a></h3>
+                    <p>Compare the top QR code generators for business cards, marketing, and digital products. Find the perfect tool for your needs.</p>
+                    <div class="article-meta">
+                        <span>📅 Feb 2026</span>
+                        <span>⏱️ 12 min read</span>
+                    </div>
+                </article>
+                
+                <article class="article-card">
+                    <span class="article-tag">Tutorial</span>
+                    <h3><a href="articles/how-to-build-cron-expressions-visual-guide.html">How to Build Cron Expressions — A Visual Guide</a></h3>
+                    <p>Master cron syntax with this interactive visual guide. Schedule tasks like a pro with our step-by-step breakdown.</p>
+                    <div class="article-meta">
+                        <span>📅 Feb 2026</span>
+                        <span>⏱️ 10 min read</span>
+                    </div>
+                </article>
+                
+                <article class="article-card">
+                    <span class="article-tag">Design</span>
+                    <h3><a href="articles/color-palette-generators-for-designers.html">Color Palette Generators for Designers — 2026 Guide</a></h3>
+                    <p>Create stunning color schemes with these free palette generators. Perfect for web design, branding, and UI/UX projects.</p>
+                    <div class="article-meta">
+                        <span>📅 Feb 2026</span>
+                        <span>⏱️ 11 min read</span>
+                    </div>
+                </article>
+                
+                <article class="article-card">
+                    <span class="article-tag">Business</span>
+                    <h3><a href="articles/invoice-generator-tools-comparison.html">Invoice Generator Tools Comparison — Best Free Options</a></h3>
+                    <p>Compare the best free invoice generators for freelancers and small businesses. Professional invoices in minutes.</p>
+                    <div class="article-meta">
+                        <span>📅 Feb 2026</span>
+                        <span>⏱️ 13 min read</span>
+                    </div>
+                </article>
+                
+                <article class="article-card">
+                    <span class="article-tag">Security</span>
+                    <h3><a href="articles/password-security-best-practices-2026.html">Password Security Best Practices in 2026</a></h3>
+                    <p>Everything you need to know about creating secure passwords, using password managers, and protecting your accounts.</p>
+                    <div class="article-meta">
+                        <span>📅 Feb 2026</span>
+                        <span>⏱️ 14 min read</span>
+                    </div>
+                </article>
+                
+                <article class="article-card">
+                    <span class="article-tag">SEO</span>
+                    <h3><a href="articles/meta-tag-checker-tools-seo.html">Meta Tag Checker Tools for SEO — Complete Guide</a></h3>
+                    <p>Optimize your website's meta tags for better search rankings. Learn what meta tags matter and how to check them.</p>
+                    <div class="article-meta">
+                        <span>📅 Feb 2026</span>
+                        <span>⏱️ 11 min read</span>
+                    </div>
+                </article>
+                
+                <article class="article-card">
+                    <span class="article-tag">Typography</span>
+                    <h3><a href="articles/google-fonts-pairing-guide.html">Google Fonts Pairing Guide — Typography That Works</a></h3>
+                    <p>Master font pairing with this comprehensive guide to Google Fonts. Create professional typography for any project.</p>
+                    <div class="article-meta">
+                        <span>📅 Feb 2026</span>
+                        <span>⏱️ 12 min read</span>
+                    </div>
+                </article>
+                
+                <article class="article-card">
+                    <span class="article-tag">Developer</span>
+                    <h3><a href="articles/readme-generator-tools-developers.html">README Generator Tools for Developers — 2026 Picks</a></h3>
+                    <p>Create professional README files in minutes. Compare the best README generators and templates for GitHub projects.</p>
+                    <div class="article-meta">
+                        <span>📅 Feb 2026</span>
+                        <span>⏱️ 10 min read</span>
+                    </div>
+                </article>
+                
+                <article class="article-card">
+                    <span class="article-tag">Automation</span>
+                    <h3><a href="articles/ai-automation-for-small-business.html">AI Automation for Small Business — Practical Guide</a></h3>
+                    <p>Learn how to automate repetitive tasks and save hours every week. Real strategies for small business owners.</p>
+                    <div class="article-meta">
+                        <span>📅 Feb 2026</span>
+                        <span>⏱️ 15 min read</span>
+                    </div>
+                </article>
+                
+                <article class="article-card">
+                    <span class="article-tag">Freelance</span>
+                    <h3><a href="articles/freelancer-email-templates-that-work.html">Freelancer Email Templates That Actually Work</a></h3>
+                    <p>Professional email templates for proposals, follow-ups, and client communication. Copy, paste, and customize.</p>
+                    <div class="article-meta">
+                        <span>📅 Feb 2026</span>
+                        <span>⏱️ 13 min read</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <aside class="sidebar" id="tools">
+            <div class="sidebar-card">
+                <h4>🛠️ Free Developer Tools</h4>
+                <ul class="tool-list">
+                    <li>
+                        <a href="https://simplereally.github.io/qr-forge/" target="_blank">
+                            <span class="tool-icon">📱</span>
+                            <span class="tool-name">QRForge</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://simplereally.github.io/cron-forge/" target="_blank">
+                            <span class="tool-icon">⏰</span>
+                            <span class="tool-name">CronForge</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://simplereally.github.io/color-forge/" target="_blank">
+                            <span class="tool-icon">🎨</span>
+                            <span class="tool-name">ColorForge</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://simplereally.github.io/invoice-forge/" target="_blank">
+                            <span class="tool-icon">📄</span>
+                            <span class="tool-name">InvoiceForge</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://simplereally.github.io/pass-forge/" target="_blank">
+                            <span class="tool-icon">🔐</span>
+                            <span class="tool-name">PassForge</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://simplereally.github.io/meta-forge/" target="_blank">
+                            <span class="tool-icon">🏷️</span>
+                            <span class="tool-name">MetaForge</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://simplereally.github.io/font-forge/" target="_blank">
+                            <span class="tool-icon">🔤</span>
+                            <span class="tool-name">FontForge</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://simplereally.github.io/readme-forge/" target="_blank">
+                            <span class="tool-icon">📝</span>
+                            <span class="tool-name">ReadmeForge</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://simplereally.github.io/md-forge/" target="_blank">
+                            <span class="tool-icon">✍️</span>
+                            <span class="tool-name">MarkdownForge</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="bazaar-banner">
+                <h4>🏪 The Bazaar</h4>
+                <p>Premium templates, playbooks, and digital products for developers & freelancers.</p>
+                <a href="https://simplereally.github.io/bazaar/" target="_blank">Browse Products →</a>
+            </div>
+        </aside>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h5>Popular Articles</h5>
+                    <ul>
+                        <li><a href="articles/best-free-qr-code-generators-2026.html">QR Code Generators</a></li>
+                        <li><a href="articles/how-to-build-cron-expressions-visual-guide.html">Cron Expressions Guide</a></li>
+                        <li><a href="articles/color-palette-generators-for-designers.html">Color Palette Tools</a></li>
+                        <li><a href="articles/password-security-best-practices-2026.html">Password Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Free Tools</h5>
+                    <ul>
+                        <li><a href="https://simplereally.github.io/qr-forge/">QRForge</a></li>
+                        <li><a href="https://simplereally.github.io/cron-forge/">CronForge</a></li>
+                        <li><a href="https://simplereally.github.io/color-forge/">ColorForge</a></li>
+                        <li><a href="https://simplereally.github.io/invoice-forge/">InvoiceForge</a></li>
+                        <li><a href="https://simplereally.github.io/pass-forge/">PassForge</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>More Tools</h5>
+                    <ul>
+                        <li><a href="https://simplereally.github.io/meta-forge/">MetaForge</a></li>
+                        <li><a href="https://simplereally.github.io/font-forge/">FontForge</a></li>
+                        <li><a href="https://simplereally.github.io/readme-forge/">ReadmeForge</a></li>
+                        <li><a href="https://simplereally.github.io/md-forge/">MarkdownForge</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Products</h5>
+                    <ul>
+                        <li><a href="https://simplereally.github.io/bazaar/">The Bazaar</a></li>
+                        <li><a href="https://simplereally.github.io/bazaar/#templates">Templates</a></li>
+                        <li><a href="https://simplereally.github.io/bazaar/#playbooks">Playbooks</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 AI Toolsmith. Built with ❤️ for developers everywhere.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
